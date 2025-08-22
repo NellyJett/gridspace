@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { motion, Easing, Variants } from "framer-motion";
 import {
   Gallery1,
   Gallery2,
@@ -32,7 +30,7 @@ const galleries = [
   <Gallery12 key="gallery12" />,
 ];
 
-const galleryVariants = {
+const galleryVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
     opacity: 1,
@@ -40,7 +38,7 @@ const galleryVariants = {
     transition: {
       delay: i * 0.1,
       duration: 0.5,
-      ease: "easeOut",
+      ease: "easeOut" as Easing,
     },
   }),
 };
@@ -50,20 +48,18 @@ const hoverEffect = {
   y: -10,
   transition: {
     duration: 0.2,
-    ease: "easeOut",
+    ease: "easeOut" as Easing,
   },
 };
 
-const marqueeVariants = {
+const marqueeVariants: Variants = {
   animate: {
     y: [0, -50],
     transition: {
-      y: {
-        repeat: Infinity,
-        repeatType: "loop",
-        duration: 4,
-        ease: "linear",
-      },
+      repeat: Infinity,
+      repeatType: "loop",
+      duration: 4,
+      ease: "linear" as Easing,
     },
   },
 };
